@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>HNGx Profile</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="wrapper__main">
+        <div class="profile-card">
+          <header class="profile-card__header">
+            <img
+              src="/img/Malach Salama.jpg"
+              alt="Malach Salama"
+              class="profile-card__avi"
+              data-testid="slackDisplayImage"
+            />
+            <div class="profile-card__title">
+              <h2 class="profile-card__name" data-testid="slackUserName">
+                Malach Salama
+              </h2>
+            </div>
+            <p class="profile-card__track" data-testid="myTrack">Frontend</p>
+          </header>
+
+          <section>
+            <div class="wrapper__content">
+              <p data-testid="currentDayOfTheWeek" id="dayOfWeek"></p>
+              <p data-testid="currentUTCTime" id="currUTCTime"></p>
+              <p data-testid="githubURL">
+                <a
+                  href="https://github.com/malachsalama/hng-profile"
+                  target="_blank"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
