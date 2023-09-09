@@ -1,33 +1,8 @@
-const currentDate = new Date();
+"use strict";
 
-const daysOfWeek = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+document.getElementById("dayOfWeek").textContent =
+  new Date().toLocaleDateString("en-US", { weekday: "long" });
 
-const today = daysOfWeek[currentDate.getDay()];
-
-const utcTime = currentDate.getTime();
-
-const dayOfWeekEl = document.getElementById("dayOfWeek");
-dayOfWeekEl.textContent = `${today}`;
-
-const currUTCTime = document.getElementById("currUTCTime");
-currUTCTime.textContent = `${utcTime}`;
-
-function updateUTCTime() {
-  const currentDate = new Date();
-  const utcTime = currentDate.getTime();
-
-  const currUTCTime = document.getElementById("currUTCTime");
-  currUTCTime.textContent = `${utcTime}`;
-}
-
-updateUTCTime();
-
-setInterval(updateUTCTime, 1000);
+setInterval(function () {
+  document.getElementById("currUTCTime").textContent = new Date().getTime();
+}, 1000);
