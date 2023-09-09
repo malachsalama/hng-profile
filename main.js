@@ -10,29 +10,24 @@ const daysOfWeek = [
   "Saturday",
 ];
 
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
 const today = daysOfWeek[currentDate.getDay()];
-const dayOfMonth = currentDate.getDate();
-const monthName = months[currentDate.getMonth()];
 
 const utcTime = currentDate.getTime();
 
 const dayOfWeekEl = document.getElementById("dayOfWeek");
-dayOfWeekEl.textContent = `${today} ${dayOfMonth} ${monthName}`;
+dayOfWeekEl.textContent = `${today}`;
 
 const currUTCTime = document.getElementById("currUTCTime");
 currUTCTime.textContent = `${utcTime}`;
+
+function updateUTCTime() {
+  const currentDate = new Date();
+  const utcTime = currentDate.getTime();
+
+  const currUTCTime = document.getElementById("currUTCTime");
+  currUTCTime.textContent = `${utcTime}`;
+}
+
+updateUTCTime();
+
+setInterval(updateUTCTime, 1000);
